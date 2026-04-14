@@ -12,8 +12,10 @@ html, body {
 }
 
 :root {
-  --accent: #3d6b45;
-  --accent-hover: #2e5235;
-  --accent-soft: rgba(61, 107, 69, 0.12);
-  --accent-soft-hover: rgba(61, 107, 69, 0.22);
+  --accent: #3a5a40;
+  --accent-hover: #9fc9a7a6;
+  --accent-soft: #739464;  
+  --accent-soft-transparent: #aecda050;   
+  --accent-soft-hover: #54624ec3;
+  --neutral-black: rgb(23 23 23);
 }

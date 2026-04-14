@@ -24,4 +24,30 @@ export const blogPosts: BlogPost[] = [
     It's still very early days but I'm excited to have a place to share my projects and thoughts with whoever might visit (you!). \
     And yes, I am using AI to help me with the template and some of the content and boring bits, but I'll try to make it as personal and genuine as possible :p",
   },
+  {
+    id: "post-x",
+    title: "test",
+    date: "2026-04-15",
+    tags: ["test"],
+    content: "iasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcfiasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcfiasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcf",
+  },
+  {
+    id: "post-x1",
+    title: "test",
+    date: "2026-04-15",
+    tags: ["test"],
+    content: "iasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcfiasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcfiasbcuihjabciujhbjlkihgcVBihuoagncfiuBYUAwgnfuybwegcfrnjaWHetgfxbuacwjygfcnunawbgfieagfcagfenxiabwgbfcuyag\
+    akjhsbdjhawgbdcjahwgrcfjhawgfjhkabgwjhfcbgauhwcbgwkabgfcuawbgucgfbacbgwgcfagbcgfcgo\
+    iawcbgfwaukjcgfkujagfbcwagbfckiuyawbgcfuikywagcf",
+  },
 ];

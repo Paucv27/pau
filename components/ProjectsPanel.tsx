@@ -26,21 +26,25 @@ export default function ProjectsPanel() {
           bg-white dark:bg-neutral-900
           border border-neutral-200 dark:border-neutral-800
           border-r-0 rounded-l-xl
-          font-mono text-xs transition-colors"
-        style={{ writingMode: "vertical-rl", color: "var(--accent)" , padding: "5px", justifyContent: "center"}}
+          font-mono text-md transition-colors
+          hover:border-neutral-400 dark:hover:border-neutral-500"
+        style={{ writingMode: "vertical-rl", color: "var(--accent)" , padding: "5px", justifyContent: "center" }}
         onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
         onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
       >
-        {open ? "close" : "open"}
+        {open ? "close" : "projects"}
       </button>
+
 
       {/* Panel body */}
       <div className="w-130 h-[650px] flex flex-col
         bg-white dark:bg-neutral-900
         border border-neutral-200 dark:border-neutral-800
-        border-r-0 rounded-l-2xl overflow-hidden">
-
-        <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" style={{ padding: "10px"}}>
+        border-r-0 rounded-l-2xl overflow-hidden"
+        >
+        {/* Projects Head */}
+        <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" 
+              style={{ padding: "10px", borderBottom: "2px solid lightgrey"}}>
           <p className="text-neutral-900 dark:text-white font-semibold text-sm">Projects</p>
           <p className="text-neutral-400 dark:text-neutral-500 text-xs font-mono mt-0.5">
             things I've built
@@ -50,9 +54,9 @@ export default function ProjectsPanel() {
               onClick={() => setActiveTag(null)}
               className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
               style={{
-                background: activeTag === null ? "var(--accent)" : "transparent",
-                color: activeTag === null ? "white" : "var(--accent)",
-                border: "1px solid var(--accent)",
+                background: activeTag === null ? "var(--accent-soft-transparent)" : "transparent",
+                color: activeTag === null ? "white" : "var(--accent-soft)",
+                padding: "2px"
               }}
             >
               all
@@ -63,8 +67,9 @@ export default function ProjectsPanel() {
                 onClick={() => setActiveTag(tag === activeTag ? null : tag)}
                 className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
                 style={{
-                  background: activeTag === tag ? "var(--accent)" : "var(--accent-soft)",
-                  color: activeTag === tag ? "white" : "var(--accent)",
+                  background: activeTag === tag ? "var(--accent-soft-transparent)" : "transparent",
+                  color: activeTag === tag ? "white" : "var(--accent-soft)",
+                  padding: "2px"
                 }}
               >
                 {tag}
@@ -72,19 +77,25 @@ export default function ProjectsPanel() {
             ))}
           </div>
         </div>
-
-        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3" style={{ padding: "10px"}}>
+        
+        {/* Projects List */}
+        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3" 
+              style={{ padding: "10px", scrollbarColor: "var(--accent) transparent", backgroundColor: "var(--accent)"}}>
           {filtered.map(project => (
             <div
               key={project.id}
-              className="rounded-xl p-4 border group transition-colors
+              className="rounded-xl p-4 border group transition-all duration-200
                 bg-neutral-50 dark:bg-neutral-800
                 border-neutral-100 dark:border-neutral-700
-                hover:border-neutral-300 dark:hover:border-neutral-600"
+                hover:border-neutral-300 dark:hover:border-neutral-400
+                hover:shadow-md"
+              style={{ background: "var(--neutral-black)" }}
             >
               <div className="flex items-start justify-between gap-2">
-                <p className="text-neutral-900 dark:text-white text-sm font-medium">{project.title}</p>
-                <div className="flex gap-3 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-neutral-900 dark:text-white text-md font-medium" style={{ paddingLeft: "10px", paddingTop: "10px"}}>
+                  {project.title}
+                </p>
+                <div className="flex gap-3 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" style={{ paddingRight: "10px", paddingTop: "10px"}}>
                   {project.repo && (
                     <a
                       href={project.repo}
@@ -95,7 +106,7 @@ export default function ProjectsPanel() {
                       onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
                       onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
                     >
-                      repo ↗
+                      // repo //
                     </a>
                   )}
                   {project.url && (
@@ -108,20 +119,20 @@ export default function ProjectsPanel() {
                       onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
                       onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
                     >
-                      live ↗
+                      // live //
                     </a>
                   )}
                 </div>
               </div>
-              <p className="text-neutral-500 dark:text-neutral-400 text-xs mt-1.5 leading-relaxed">
+              <p className="text-neutral-500 dark:text-neutral-200 text-sm mt-1.5 leading-relaxed" style={{ paddingLeft: "10px", paddingTop: "5px"}}>
                 {project.description}
               </p>
-              <div className="flex gap-1.5 mt-3 flex-wrap">
+              <div className="flex gap-1.5 mt-3 flex-wrap" style={{ paddingLeft: "10px", paddingTop: "5px", paddingBottom: "10px"}}>
                 {project.tags.map(tag => (
                   <span
                     key={tag}
                     className="text-xs px-2 py-0.5 rounded font-mono"
-                    style={{ background: "var(--accent-soft)", color: "var(--accent)" }}
+                    style={{ background: "var(--accent-soft-transparent)", color: "white", padding: "2px"}}
                   >
                     {tag}
                   </span>
