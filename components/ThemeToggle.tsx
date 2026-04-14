@@ -20,7 +20,7 @@ export default function ThemeToggle() {
         bg-white dark:bg-neutral-900
         text-neutral-500 dark:text-neutral-400
         hover:border-neutral-400 dark:hover:border-neutral-500
-        transition-colors duration-200 font-mono text-sm"
+        transition-colors duration-200 font-mono text-2xl"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? "○" : "●"}

@@ -159,7 +159,7 @@ export default function AboutPanel() {
                       paddingTop: "10px", 
                       paddingLeft: "20px",
                       paddingRight: "20px", 
-                      paddingBottom: "10px",
+                      paddingBottom: "25px",
                       borderLeft: "2px solid white"
                       }}>
                   <p className={SECTION}>Links</p>
@@ -175,9 +175,9 @@ export default function AboutPanel() {
                         rel="noopener noreferrer"
                         onClick={e => e.stopPropagation()}
                         className="text-sm font-mono transition-colors"
-                        style={{ color: "var(--accent)" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
-                        onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
+                        style={{ color: "var(--accent-soft)" }}
+                        onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                        onMouseLeave={e => (e.currentTarget.style.color = "var(--accent-soft)")}
                       >
                         \\ {label} \\
                       </a>
