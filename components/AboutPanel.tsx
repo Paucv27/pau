@@ -35,8 +35,8 @@ export default function AboutPanel() {
             className="flex items-center justify-center h-full px-6 gap-3 select-none"
             style={{ border: "2px solid lightgrey", borderRadius: "15px" }}
           >
-            <div className="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
-            <span className="font-mono text-sm text-neutral-600 dark:text-neutral-300">
+            <div className="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
+            <span className="font-mono text-md text-neutral-600 dark:text-neutral-300">
               click me <span style={{ color: "var(--accent)" }}>!!</span>
             </span>
           </motion.div>
@@ -101,14 +101,20 @@ export default function AboutPanel() {
                       borderLeft: "2px solid white" 
                       }}>
                   <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed mb-2 font-semibold font-family-sans">
-                      hi!! i'm pau, a 20 y/o cs student from Tenerife
+                      hi! i'm pau, a 20 y/o cs student from Tenerife currently in studying in Manchester (don't ask why i gave up the eternal sun for this)
+                      <br />
+                      i'm not actually a web dev, but i needed a project to learn some useful frontend skills. I'm more into backend and cybersecurity, but i promise this website is like my baby
+                      <br />
+                      feel free to check out my projects and blog posts, or contact me for whatever reason :p 
+                      <br />
+                      outside of tech i'm mainly interested in music and games, and i'm also really big on Pokemon and Star Wars, i even have a tattoo of the Fulcrum x Rex symbol :)
                   </p>
                 </div>
                 
 
                 {/* Languages */}
                 <div className="mb-2" style={{ paddingTop: "10px", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "15px"}}>
-                  <p className={SECTION} style={{ paddingBottom: "4px" }}>Languages</p>
+                  <p className={SECTION} style={{ paddingBottom: "0px" }}>Languages</p>
                   <div className="flex gap-2 flex-wrap">
                     {["English", "Español"].map(lang => (
                       <span
@@ -133,7 +139,7 @@ export default function AboutPanel() {
                           borderLeft: "2px solid white",
                         }}>
                   <p className={SECTION}>Education</p>
-                  <p className="text-neutral-800 dark:text-neutral-200 text-lg font-bold">
+                  <p className="text-neutral-800 dark:text-neutral-200 text-md font-bold">
                     BSc Computer Science
                   </p>
                   <p className="text-neutral-400 dark:text-neutral-200 text-sm font-mono mt-1">
@@ -144,9 +150,9 @@ export default function AboutPanel() {
 
                 {/* Other Interests */}
                 <div className="mb-2" style={{ paddingTop: "10px", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "10px" }}>
-                  <p className={SECTION}>Interests</p>
+                  <p className={SECTION}>Other Thing</p>
                   <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed"
-                      style={{paddingLeft: "5px"}}>
+                      style={{paddingLeft: "5px", fontSize: "16px"}}>
                     <li>Cybersecurity</li>
                     <li>Music</li>
                     <li>Videogames</li>

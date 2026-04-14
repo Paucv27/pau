@@ -58,6 +58,18 @@ export default function ProjectsPanel() {
                 color: activeTag === null ? "white" : "var(--accent-soft)",
                 padding: "2px"
               }}
+              onMouseEnter={e => {
+                if (activeTag !== null) {
+                  e.currentTarget.style.background = "var(--accent-soft-transparent)";
+                  e.currentTarget.style.color = "white";
+                }
+              }}
+              onMouseLeave={e => {
+                if (activeTag !== null) {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "var(--accent-soft)";
+                }
+              }}
             >
               all
             </button>
@@ -70,6 +82,18 @@ export default function ProjectsPanel() {
                   background: activeTag === tag ? "var(--accent-soft-transparent)" : "transparent",
                   color: activeTag === tag ? "white" : "var(--accent-soft)",
                   padding: "2px"
+                }}
+                onMouseEnter={e => {
+                  if (activeTag !== tag) {
+                    e.currentTarget.style.background = "var(--accent-soft-transparent)";
+                    e.currentTarget.style.color = "white";
+                  }
+                }}
+                onMouseLeave={e => {
+                  if (activeTag !== tag) {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "var(--accent-soft)";
+                  }
                 }}
               >
                 {tag}
