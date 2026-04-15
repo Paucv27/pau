@@ -15,7 +15,7 @@ export default function LoadingScreen() {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ duration: 1, delay: 1.5 }}
+      transition={{ duration: 2, delay: 2 }}
       onAnimationComplete={() => {
         // Optional: remove from DOM completely after fade
         const element = document.getElementById("loading-screen");
@@ -31,7 +31,7 @@ export default function LoadingScreen() {
         className="text-white font-mono text-xl"
         style={{ color: "var(--accent)" }}
       >
-        loading...
+        loading pau's site...
       </motion.div>
     </motion.div>
   );

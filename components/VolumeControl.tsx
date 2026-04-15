@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 export default function VolumeControl() {
   const [open, setOpen] = useState(false);
@@ -28,15 +29,18 @@ export default function VolumeControl() {
     <div className="relative">
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-14 h-14 rounded-lg flex items-center justify-center
+        className="w-16 h-16 rounded-lg flex items-center justify-center
           border border-neutral-200 dark:border-neutral-700
           bg-white dark:bg-neutral-900
-          text-neutral-500 dark:text-neutral-400
+          text-neutral-800 dark:text-neutral-100
           hover:border-neutral-400 dark:hover:border-neutral-500
           transition-colors duration-200 font-mono text-2xl"
         title="Volume control"
       >
-        {muted || volume === 0 ? "×" : "♪"}
+        {muted || volume === 0 
+        ? <VolumeX size={35} /> 
+        : <Volume2 size={35} />
+        }
       </button>
 
       {open && (
@@ -78,7 +82,11 @@ export default function VolumeControl() {
           {/* Radio buttons 1–100 */}
           <div
             className="overflow-y-auto px-4 py-3 flex flex-col gap-1.5"
-            style={{ maxHeight: "240px", opacity: muted ? 0.4 : 1, transition: "opacity 0.2s", padding: "5px"}}
+            style={{ maxHeight: "240px", 
+                     opacity: muted ? 0.4 : 1, 
+                     transition: "opacity 0.2s", 
+                     padding: "5px",
+                     scrollbarColor: "var(--accent) transparent",}}
           >
             {Array.from({ length: 100 }, (_, i) => i + 1).map(v => (
               <label

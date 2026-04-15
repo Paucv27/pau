@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 
 html, body {
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 :root {
@@ -18,4 +20,23 @@ html, body {
   --accent-soft-transparent: #aecda050;   
   --accent-soft-hover: #54624ec3;
   --neutral-black: rgb(23 23 23);
+  --bg: #739464;
+  --particles: #eaeaea;
+  --particles-links: #fbfbfb;
+  --panel-grabber: 2px solid rgba(255, 255, 255, 0.148);
+  --tag: #000000;
+  --post-bg: #aecda06a;
+  --scrollbar: #81a372cc;
+  --about-bg: #aecda0;
+  --language-color: #aecda0;
+}
+
+.dark {
+  --bg: #171717;
+  --particles: #3a5a40;
+  --particles-links: #3a5a40;
+  --tag: #ffffff;
+  --post-bg: #3a5a4063;
+  --about-bg: #3a5a4063;
+  --language-color: #2c4531;
 }

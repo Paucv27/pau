@@ -22,14 +22,13 @@ export default function BlogPanel() {
       {/* Panel body */}
       <div className="w-130 h-[650px] flex flex-col
         bg-white dark:bg-neutral-900
-        border border-neutral-200 dark:border-neutral-800
         border-l-0 rounded-r-2xl overflow-hidden"
         style={{ }}>
 
         <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" 
               style={{ padding: "10px", borderBottom: "2px solid lightgrey"}}>
-          <p className="text-neutral-900 dark:text-white font-semibold text-sm">Blog</p>
-          <p className="text-neutral-400 dark:text-neutral-500 text-xs font-mono mt-0.5">
+          <p className="text-neutral-900 dark:text-white font-semibold text-lg">Blog</p>
+          <p className="text-neutral-500 dark:text-neutral-500 text-sm font-mono mt-0.5">
             what I've been up to
           </p>
           <div className="flex gap-2 flex-wrap mt-3" style={{ paddingTop: "3px"}}>
@@ -38,13 +37,13 @@ export default function BlogPanel() {
               className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
               style={{
                 background: activeTag === null ? "var(--accent-soft-transparent)" : "transparent",
-                color: activeTag === null ? "white" : "var(--accent-soft)",
+                color: activeTag === null ? "var(--tag)" : "var(--accent-soft)",
                 padding: "2px"
               }}
               onMouseEnter={e => {
                 if (activeTag !== null) {
                   e.currentTarget.style.background = "var(--accent-soft-transparent)";
-                  e.currentTarget.style.color = "white";
+                  e.currentTarget.style.color = "var(--tag)";
                 }
               }}
               onMouseLeave={e => {
@@ -63,13 +62,13 @@ export default function BlogPanel() {
                 className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
                 style={{
                   background: activeTag === tag ? "var(--accent-soft-transparent)" : "transparent",
-                  color: activeTag === tag ? "white" : "var(--accent-soft)",
+                  color: activeTag === tag ? "var(--tag)" : "var(--accent-soft)",
                   padding: "2px"
                 }}
                 onMouseEnter={e => {
                   if (activeTag !== tag) {
                     e.currentTarget.style.background = "var(--accent-soft-transparent)";
-                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.color = "var(--tag)";
                   }
                 }}
                 onMouseLeave={e => {
@@ -86,17 +85,18 @@ export default function BlogPanel() {
         </div>
  
         {/* Posts */}
-        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 scrollable" 
-              style={{ padding: "10px", scrollbarColor: "var(--accent) transparent", backgroundColor: "var(--accent)"}}>
+        <div className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col gap-3 scrollable" 
+              style={{ padding: "10px", 
+                       scrollbarColor: "var(--scrollbar) transparent", 
+                       }}>
           {filtered.map(post => (
             <div
               key={post.id}
               className="rounded-xl p-4 border group transition-all duration-200
-                bg-neutral-50 dark:bg-neutral-800
-                border-neutral-100 dark:border-neutral-700
-                hover:border-neutral-300 dark:hover:border-neutral-400
+                border-neutral-100 dark:border-neutral-800
+                hover:border-neutral-300 dark:hover:border-neutral-500
                 hover:shadow-md"
-              style={{ background: "var(--neutral-black)" }}
+              style={{ background: "var(--post-bg)" }}
             >
               <p className="text-neutral-900 dark:text-white text-md font-medium" 
                  style={{ paddingLeft: "10px", paddingTop: "10px", paddingRight: "10px"}}>
@@ -106,7 +106,7 @@ export default function BlogPanel() {
                  style={{ paddingLeft: "10px"}}>
                 {post.date}
                 </p>
-              <p className="text-neutral-500 dark:text-neutral-200 text-sm mt-2 leading-relaxed line-clamp-5" 
+              <p className="font-mono text-neutral-700 dark:text-neutral-200 text-sm mt-2 leading-relaxed break-words" 
                  style={{ paddingLeft: "10px", paddingTop: "5px", paddingBottom: "5px", paddingRight: "10px"}}>
                 {post.content}
               </p>
@@ -115,7 +115,9 @@ export default function BlogPanel() {
                   <span
                     key={tag}
                     className="text-xs px-2 py-0.5 rounded font-mono"
-                    style={{ background: "var(--accent-soft-transparent)", color: "white", padding: "2px"}}
+                    style={{ background: "var(--accent-soft-transparent)", 
+                             color: "var(--tag)", 
+                             padding: "2px"}}
                   >
                     {tag}
                   </span>
@@ -131,11 +133,17 @@ export default function BlogPanel() {
         onClick={() => setOpen(o => !o)}
         className="h-30 px-10 flex items-center shrink-0
           bg-white dark:bg-neutral-900
-          border border-neutral-200 dark:border-neutral-800
           border-l-0 rounded-r-xl
           font-mono text-md  transition-colors
           hover:border-neutral-400 dark:hover:border-neutral-500"
-        style={{ writingMode: "vertical-rl", color: "var(--accent)", padding: "5px", justifyContent: "center" }}
+        style={{ writingMode: "vertical-rl", 
+                 color: "var(--accent)", 
+                 padding: "5px", 
+                 justifyContent: "center", 
+                 borderTop: "var(--panel-grabber)", 
+                 borderBottom: "var(--panel-grabber)",
+                 borderRight: "var(--panel-grabber)",
+                 borderLeft: "0" }}
         onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
         onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
       >

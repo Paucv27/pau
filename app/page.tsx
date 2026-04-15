@@ -10,8 +10,10 @@ export default function Home() {
   return (
     <>
     <LoadingScreen />
-    <main className="w-screen h-screen flex items-center justify-center overflow-hidden relative
-      bg-stone-50 dark:bg-neutral-900 transition-colors duration-300">
+    <main className="w-screen h-screen 
+      flex items-center justify-center overflow-hidden relative 
+      transition-colors duration-300"
+      style={{ backgroundColor: "var(--bg)"}}>
 
       {/* Top left controls */}
       <div className="absolute top-4 left-4 flex gap-2 z-50">

@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react"
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -15,15 +16,18 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="w-14 h-14 rounded-lg flex items-center justify-center
+      className="w-16 h-16 rounded-lg flex items-center justify-center
         border border-neutral-200 dark:border-neutral-700
         bg-white dark:bg-neutral-900
-        text-neutral-500 dark:text-neutral-400
+        text-neutral-900 dark:text-neutral-400
         hover:border-neutral-400 dark:hover:border-neutral-500
         transition-colors duration-200 font-mono text-2xl"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      {isDark ? "○" : "●"}
+      {isDark
+      ? <Moon size={35} style={{ color: "var(--accent-soft)" }} />
+      : <Sun size={35} style={{ color: "var(--accent)" }} />
+      }
     </button>
   );
 }

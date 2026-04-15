@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const SECTION = "text-[24px] font-mono uppercase tracking-widest text-neutral-400 dark:text-neutral-200 mb-3";
+const SECTION = "text-[28px] font-mono font-bold uppercase tracking-widest text-neutral-100 dark:text-neutral-200 mb-3";
 const SEPARATOR = "border-t border-neutral-200 dark:border-neutral-700 my-5";
 
 export default function AboutPanel() {
@@ -14,7 +15,6 @@ export default function AboutPanel() {
       onClick={() => !expanded && setExpanded(true)}
       className={`
         relative bg-white dark:bg-neutral-900
-        border border-neutral-200 dark:border-neutral-800
         rounded-2xl overflow-hidden flex flex-col z-10
         ${expanded ? "cursor-default" : "cursor-pointer hover:border-neutral-400 dark:hover:border-neutral-600"}
         transition-colors duration-200
@@ -33,11 +33,11 @@ export default function AboutPanel() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="flex items-center justify-center h-full px-6 gap-3 select-none"
-            style={{ border: "2px solid lightgrey", borderRadius: "15px" }}
+            style={{ border: "var(--panel-grabber)", borderRadius: "15px" }}
           >
             <div className="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
             <span className="font-mono text-md text-neutral-600 dark:text-neutral-300">
-              click me <span style={{ color: "var(--accent)" }}>!!</span>
+              Pau <span style={{ color: "var(--accent)" }}>!!</span>
             </span>
           </motion.div>
         )}
@@ -51,7 +51,6 @@ export default function AboutPanel() {
             animate={{ opacity: 1, transition: { delay: 0.15 } }}
             exit={{ opacity: 0 }}
             className="flex flex-col h-full"
-            style={{ borderRadius: "15px"}}
           >
             {/* Close button */}
             <div className="flex justify-end shrink-0" style={{ padding: "10px" }}>
@@ -69,7 +68,11 @@ export default function AboutPanel() {
             {/* Header */}
             <div className="px-7 shrink-0">
               <div className="flex items-center gap-5 mb-6" 
-                    style={{ paddingTop: "40px", paddingBottom: "40px", paddingLeft: "20px", paddingRight: "20px", borderTop: "2px solid lightgrey", borderBottom: "1px solid grey"}}>
+                    style={{ paddingTop: "40px", 
+                             paddingBottom: "40px", 
+                             paddingLeft: "20px", 
+                             paddingRight: "20px", 
+                             borderTop: "2px solid lightgrey"}}>
                 <div className="w-35 h-35 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
                 <div>
                   <h1 className="text-neutral-900 font-semibold text-4xl leading-tight"
@@ -87,8 +90,8 @@ export default function AboutPanel() {
               <div 
                 className="flex-1 overflow-y-auto scrollable px-7 pb-7"
                 style={{
-                  scrollbarColor: "var(--accent) transparent",
-                  backgroundColor: "var(--accent)"
+                  scrollbarColor: "var(--scrollbar) transparent",
+                  backgroundColor: "var(--about-bg)",
                 }}
               >
                 {/* Bio */}     
@@ -97,30 +100,34 @@ export default function AboutPanel() {
                       paddingTop: "20px", 
                       paddingLeft: "20px", 
                       paddingRight: "20px", 
-                      paddingBottom: "20px",
+                      paddingBottom: "10px",
                       borderLeft: "2px solid white" 
                       }}>
-                  <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed mb-2 font-semibold font-family-sans">
-                      hi! i'm pau, a 20 y/o cs student from Tenerife currently in studying in Manchester (don't ask why i gave up the eternal sun for this)
+                  <p className="text-neutral-100 text-md leading-relaxed font-mono font-family-sans">
+                      // hi! i'm pau, a 20 y/o cs student from Tenerife currently in studying in Manchester
                       <br />
-                      i'm not actually a web dev, but i needed a project to learn some useful frontend skills. I'm more into backend and cybersecurity, but i promise this website is like my baby
+                      // i'm not actually a web dev, but i needed a project to learn some useful frontend skills. i'm more into backend and cybersecurity, but i'll treat this website like my baby
                       <br />
-                      feel free to check out my projects and blog posts, or contact me for whatever reason :p 
+                      // feel free to check out my projects and blog posts, or contact me for whatever reason
                       <br />
-                      outside of tech i'm mainly interested in music and games, and i'm also really big on Pokemon and Star Wars, i even have a tattoo of the Fulcrum x Rex symbol :)
+                      // outside of tech i'm mainly interested in music and games, and i'm also really big on Pokemon, Star Wars, and the colour green if you couldn't already tell :)
                   </p>
                 </div>
                 
 
                 {/* Languages */}
                 <div className="mb-2" style={{ paddingTop: "10px", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "15px"}}>
-                  <p className={SECTION} style={{ paddingBottom: "0px" }}>Languages</p>
+                  <p className={SECTION} style={{ paddingBottom: "5px" }}>Languages</p>
                   <div className="flex gap-2 flex-wrap">
                     {["English", "Español"].map(lang => (
                       <span
                         key={lang}
-                        className="text-md px-3 py-1.5 rounded-md font-mono cursor-default"
-                        style={{ background: "var(--accent-soft)", color: "white", paddingTop: "5px", paddingLeft: "5px", paddingRight: "5px", paddingBottom: "5px"}}
+                        className="text-lg px-3 py-1.5 rounded-md font-semibold cursor-default"
+                        style={{ background: "var(--accent-soft)", 
+                                 color: "var(--language-color)", 
+                                 padding: "10px" }}
+                        onMouseEnter={e => (e.currentTarget.style.background = "var(--accent-hover)", e.currentTarget.style.color = "white")}
+                        onMouseLeave={e => (e.currentTarget.style.background = "var(--accent-soft)", e.currentTarget.style.color = "var(--language-color)")}
                       >
                         {lang}
                       </span>
@@ -139,24 +146,12 @@ export default function AboutPanel() {
                           borderLeft: "2px solid white",
                         }}>
                   <p className={SECTION}>Education</p>
-                  <p className="text-neutral-800 dark:text-neutral-200 text-md font-bold">
-                    BSc Computer Science
+                  <p className="text-neutral-100 dark:text-neutral-200 text-lg font-semibold">
+                    BSc(Hons) Computer Science
                   </p>
-                  <p className="text-neutral-400 dark:text-neutral-200 text-sm font-mono mt-1">
+                  <p className="text-neutral-200 dark:text-neutral-200 text-md font-mono">
                     University of Manchester · 2024 – Current
                   </p>
-                </div>
-
-
-                {/* Other Interests */}
-                <div className="mb-2" style={{ paddingTop: "10px", paddingLeft: "20px", paddingRight: "20px", paddingBottom: "10px" }}>
-                  <p className={SECTION}>Other Thing</p>
-                  <ul className="list-disc list-inside text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed"
-                      style={{paddingLeft: "5px", fontSize: "16px"}}>
-                    <li>Cybersecurity</li>
-                    <li>Music</li>
-                    <li>Videogames</li>
-                  </ul>
                 </div>
 
 
@@ -166,29 +161,45 @@ export default function AboutPanel() {
                       paddingLeft: "20px",
                       paddingRight: "20px", 
                       paddingBottom: "25px",
-                      borderLeft: "2px solid white"
                       }}>
                   <p className={SECTION}>Links</p>
                   <div className="flex gap-5 flex-wrap">
                     {[
-                      { label: "GitHub", href: "https://github.com/paucv27" },
-                      { label: "LinkedIn", href: "https://linkedin.com/in/paucv27" },
-                    ].map(({ label, href }) => (
+                      { href: "https://github.com/paucv27", icon: <FaGithub size={50} /> },
+                      {  href: "https://linkedin.com/in/paucv27", icon: <FaLinkedin size={50} /> },
+                    ].map(({ href, icon }) => (
                       <a
-                        key={label}
+                        key={href}
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={e => e.stopPropagation()}
-                        className="text-sm font-mono transition-colors"
-                        style={{ color: "var(--accent-soft)" }}
+                        className="text-md font-mono transition-colors"
+                        style={{ color: "var(--accent-soft)", paddingTop: "5px" }}
                         onMouseEnter={e => (e.currentTarget.style.color = "white")}
                         onMouseLeave={e => (e.currentTarget.style.color = "var(--accent-soft)")}
                       >
-                        \\ {label} \\
+                        {icon}
                       </a>
                     ))}
                   </div>
+                </div>
+
+
+                {/* More */}
+                <div className="mb-2" 
+                     style={{ paddingTop: "10px", 
+                              paddingLeft: "20px", 
+                              paddingRight: "20px", 
+                              paddingBottom: "10px",
+                              borderLeft: "2px solid white"}}>
+                  <p className={SECTION}>More about me</p>
+                  <ul className="font-mono list-disc list-inside text-neutral-100 dark:text-neutral-200 text-md leading-relaxed"
+                      style={{paddingLeft: "5px", paddingTop: "5px", fontSize: "16px"}}>
+                    <li>Stuff 1</li>
+                    <li>Stuff 2</li>
+                    <li>Stuff 3</li>
+                  </ul>
                 </div>
 
               </div>
