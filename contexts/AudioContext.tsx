@@ -18,6 +18,7 @@ const sounds: Record<string, Howl> = {
   pop: new Howl({ src: ['/sounds/pop.mp3'], volume: 0.5 }),
   triangle: new Howl({ src: ['/sounds/triangle.wav'], volume: 0.5 }),
   item: new Howl({ src: ['/sounds/get-item.wav'], volume: 0.5 }),
+  bubbles: new Howl({ src: ['/sounds/bubbles-pop.mp3'], volume: 0.5 })
 };
 
 export function AudioProvider({ children }: { children: ReactNode }) {
