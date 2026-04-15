@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="google-site-verification" content="gG2obdN_CGMKSZR2PTIY-omQQ6mN37p52dHipAucGe4" />
+      </head>
       <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           {children}
