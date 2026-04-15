@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: "This website!",
     description: "Wanted to learn some web development, so I built this personal webpage using Next.js, React, and Tailwind CSS. It's a space to share my projects and blog posts, and to experiment with frontend design because I've been wanting to do something creative for a while",
     tags: ["webdev", "next.js", "react", "typescript"],
-    url: "",
+    url: "https://paucarrillovelasco.vercel.app/",
     repo: "https://github.com/Paucv27/pau",
   },
 ];

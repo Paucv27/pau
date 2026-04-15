@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useAudio } from "@/contexts/AudioContext";
 
 const SECTION = "text-[28px] font-mono font-bold uppercase tracking-widest text-neutral-100 dark:text-neutral-200 mb-3";
@@ -50,7 +50,7 @@ export default function AboutPanel() {
           >
             <div className="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
             <span className="font-mono text-md text-neutral-600 dark:text-neutral-300">
-              Pau <span style={{ color: "var(--accent)" }}>!!</span>
+              click me <span style={{ color: "var(--accent)" }}>!!</span>
             </span>
           </motion.div>
         )}
@@ -171,12 +171,18 @@ export default function AboutPanel() {
                           borderLeft: "2px solid white",
                         }}>
                   <p className={SECTION}>Education</p>
-                  <p className="text-neutral-100 dark:text-neutral-200 text-lg font-semibold">
+                  <p className="text-neutral-100 dark:text-neutral-200 text-lg font-bold">
                     BSc(Hons) Computer Science
                   </p>
-                  <p className="text-neutral-200 dark:text-neutral-200 text-md font-mono">
+                  <p className="text-neutral-200 dark:text-neutral-200 text-md font-mono font-semibold">
                     University of Manchester · 2024 – Current
                   </p>
+                  <ul className="font-mono list-disc list-inside text-neutral-100 dark:text-neutral-200 text-sm leading-relaxed"
+                      style={{paddingLeft: "5px", paddingTop: "5px", fontSize: "16px"}}>
+                    <li>UniCS Secretary and PR Officer</li>
+                    <li>Manchester Intelligence Society Treasurer</li>
+                    <li>Catalan Society Secretary</li>
+                  </ul>
                 </div>
 
 
@@ -191,7 +197,8 @@ export default function AboutPanel() {
                   <div className="flex gap-5 flex-wrap">
                     {[
                       { href: "https://github.com/paucv27", icon: <FaGithub size={50} /> },
-                      {  href: "https://linkedin.com/in/paucv27", icon: <FaLinkedin size={50} /> },
+                      { href: "https://linkedin.com/in/paucv27", icon: <FaLinkedin size={50} /> },
+                      { href: "https://instagram.com/pauvelxsco", icon: <FaInstagram size={50} /> },
                     ].map(({ href, icon }) => (
                       <a
                         key={href}
@@ -227,9 +234,12 @@ export default function AboutPanel() {
                   <p className={SECTION}>More about me</p>
                   <ul className="font-mono list-disc list-inside text-neutral-100 dark:text-neutral-200 text-md leading-relaxed"
                       style={{paddingLeft: "5px", paddingTop: "5px", fontSize: "16px"}}>
-                    <li>Stuff 1</li>
-                    <li>Stuff 2</li>
-                    <li>Stuff 3</li>
+                    <li>i was born in february 2006!</li>
+                    <li>i looove going to concerts, last year i saw 2 of my top 3 artists of all time, and this year i'm seeing the third one!</li>
+                    <li>i've lived in 5 different countries across 3 different continents (4 if you believe america is north/south)</li>
+                    <li>i support fc barcelona, but have sadly never been to a game irl :(</li>
+                    <li>i want a fat orange cat named biscoff as soon as i can</li>
+                    <li>i also like playing chess (recently got back into it) and drawing (occasionally)!</li>
                   </ul>
                 </div>
 
