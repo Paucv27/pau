@@ -2,12 +2,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blog-posts";
+import { useAudio } from "@/contexts/AudioContext";
 
 const allTags = Array.from(new Set(blogPosts.flatMap(p => p.tags)));
 
 export default function BlogPanel() {
   const [open, setOpen] = useState(false);
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const { playSound } = useAudio();
+
 
   const filtered = activeTag
     ? blogPosts.filter(p => p.tags.includes(activeTag))
@@ -33,18 +36,23 @@ export default function BlogPanel() {
           </p>
           <div className="flex gap-2 flex-wrap mt-3" style={{ paddingTop: "3px"}}>
             <button
-              onClick={() => setActiveTag(null)}
+              onClick={() => {
+                setActiveTag(null);
+                playSound("click");
+              }}
               className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
               style={{
                 background: activeTag === null ? "var(--accent-soft-transparent)" : "transparent",
                 color: activeTag === null ? "var(--tag)" : "var(--accent-soft)",
-                padding: "2px"
+                padding: "2px",
+                cursor: "pointer"
               }}
               onMouseEnter={e => {
                 if (activeTag !== null) {
                   e.currentTarget.style.background = "var(--accent-soft-transparent)";
                   e.currentTarget.style.color = "var(--tag)";
                 }
+                playSound("hover");
               }}
               onMouseLeave={e => {
                 if (activeTag !== null) {
@@ -58,18 +66,23 @@ export default function BlogPanel() {
             {allTags.map(tag => (
               <button
                 key={tag}
-                onClick={() => setActiveTag(tag === activeTag ? null : tag)}  
+                onClick={() => {
+                  setActiveTag(tag === activeTag ? null : tag);
+                  playSound("click");
+                }}
                 className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
                 style={{
                   background: activeTag === tag ? "var(--accent-soft-transparent)" : "transparent",
                   color: activeTag === tag ? "var(--tag)" : "var(--accent-soft)",
-                  padding: "2px"
+                  padding: "2px",
+                  cursor: "pointer"
                 }}
                 onMouseEnter={e => {
                   if (activeTag !== tag) {
                     e.currentTarget.style.background = "var(--accent-soft-transparent)";
                     e.currentTarget.style.color = "var(--tag)";
                   }
+                  playSound("hover");
                 }}
                 onMouseLeave={e => {
                   if (activeTag !== tag) {
@@ -88,7 +101,8 @@ export default function BlogPanel() {
         <div className="flex-1 overflow-y-auto overflow-x-hidden flex flex-col gap-3 scrollable" 
               style={{ padding: "10px", 
                        scrollbarColor: "var(--scrollbar) transparent", 
-                       }}>
+                       }}
+              >
           {filtered.map(post => (
             <div
               key={post.id}
@@ -97,6 +111,7 @@ export default function BlogPanel() {
                 hover:border-neutral-300 dark:hover:border-neutral-500
                 hover:shadow-md"
               style={{ background: "var(--post-bg)" }}
+              onMouseEnter={() => playSound("hover")}
             >
               <p className="text-neutral-900 dark:text-white text-md font-medium" 
                  style={{ paddingLeft: "10px", paddingTop: "10px", paddingRight: "10px"}}>
@@ -130,7 +145,10 @@ export default function BlogPanel() {
 
       {/* Tab — inside motion.div so it moves with the panel */}
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => {
+          setOpen(o => !o);
+          playSound("click");
+        }}
         className="h-30 px-10 flex items-center shrink-0
           bg-white dark:bg-neutral-900
           border-l-0 rounded-r-xl
@@ -143,9 +161,10 @@ export default function BlogPanel() {
                  borderTop: "var(--panel-grabber)", 
                  borderBottom: "var(--panel-grabber)",
                  borderRight: "var(--panel-grabber)",
-                 borderLeft: "0" }}
-        onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
-        onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
+                 borderLeft: "0",
+                 cursor: "pointer" }}
+        onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)", playSound("hover"))}
+        onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)", playSound("hover"))}
       >
         {open ? "close" : "blog"}
       </button>

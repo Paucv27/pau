@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
+import { useAudio } from "@/contexts/AudioContext";
 
 const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
 
 export default function ProjectsPanel() {
   const [open, setOpen] = useState(false);
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const { playSound } = useAudio();
 
   const filtered = activeTag
     ? projects.filter(p => p.tags.includes(activeTag))
@@ -21,7 +23,10 @@ export default function ProjectsPanel() {
     >
       {/* Tab — inside motion.div so it moves with the panel */}
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => {
+          setOpen(o => !o);
+          playSound("click");
+        }}
         className="h-30 px-10 flex items-center shrink-0    
           bg-white dark:bg-neutral-900
           border-r-0 rounded-l-xl
@@ -34,9 +39,15 @@ export default function ProjectsPanel() {
                  borderLeft: "var(--panel-grabber)", 
                  borderTop: "var(--panel-grabber)", 
                  borderBottom: "var(--panel-grabber)", 
-                 borderRight: "0" }}
-        onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
-        onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
+                 borderRight: "0",
+                 cursor: "pointer" }}
+        onMouseEnter={e => {
+          e.currentTarget.style.color = "var(--accent-hover)";
+          playSound("hover");
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.color = "var(--accent)";
+        }}
       >
         {open ? "close" : "projects"}
       </button>
@@ -50,25 +61,32 @@ export default function ProjectsPanel() {
         >
         {/* Projects Head */}
         <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" 
-              style={{ padding: "10px", borderBottom: "2px solid lightgrey"}}>
+              style={{ padding: "10px", 
+                       borderBottom: "2px solid lightgrey"}}>
           <p className="text-neutral-900 dark:text-white font-semibold text-lg">Projects</p>
           <p className="text-neutral-400 dark:text-neutral-500 text-sm font-mono mt-0.5">
             things I've built
           </p>
-          <div className="flex gap-2 flex-wrap mt-3" style={{ paddingTop: "3px"}}>
+          <div className="flex gap-2 flex-wrap mt-3" 
+               style={{ paddingTop: "3px"}}>
             <button
-              onClick={() => setActiveTag(null)}
+              onClick={() => {
+                setActiveTag(null);
+                playSound("click");
+              }}
               className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
               style={{
                 background: activeTag === null ? "var(--accent-soft-transparent)" : "transparent",
                 color: activeTag === null ? "var(--tag)" : "var(--accent-soft)",
-                padding: "2px"
+                padding: "2px",
+                cursor: "pointer"
               }}
               onMouseEnter={e => {
                 if (activeTag !== null) {
                   e.currentTarget.style.background = "var(--accent-soft-transparent)";
                   e.currentTarget.style.color = "var(--tag)";
                 }
+                playSound("hover");
               }}
               onMouseLeave={e => {
                 if (activeTag !== null) {
@@ -82,18 +100,23 @@ export default function ProjectsPanel() {
             {allTags.map(tag => (
               <button
                 key={tag}
-                onClick={() => setActiveTag(tag === activeTag ? null : tag)}
+                onClick={() => {
+                  setActiveTag(tag === activeTag ? null : tag);
+                  playSound("click");
+                }}
                 className="text-xs px-2 py-1 rounded-md font-mono transition-colors"
                 style={{
                   background: activeTag === tag ? "var(--accent-soft-transparent)" : "transparent",
                   color: activeTag === tag ? "var(--tag)" : "var(--accent-soft)",
-                  padding: "2px"
+                  padding: "2px",
+                  cursor: "pointer"
                 }}
                 onMouseEnter={e => {
                   if (activeTag !== tag) {
                     e.currentTarget.style.background = "var(--accent-soft-transparent)";
                     e.currentTarget.style.color = "var(--tag)";
                   }
+                  playSound("hover");
                 }}
                 onMouseLeave={e => {
                   if (activeTag !== tag) {
@@ -122,6 +145,7 @@ export default function ProjectsPanel() {
                 hover:border-neutral-300 dark:hover:border-neutral-500
                 hover:shadow-md"
               style={{ background: "var(--post-bg)" }}
+              onMouseEnter={() => playSound("hover")}
             >
               <div className="flex items-start justify-between gap-2">
                 <p className="text-neutral-900 dark:text-white text-md font-medium" style={{ paddingLeft: "10px", paddingTop: "10px"}}>

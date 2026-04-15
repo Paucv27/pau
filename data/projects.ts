@@ -12,7 +12,8 @@ export const projects: Project[] = [
   {
     id: "proj-1",
     title: "Polidex TCG",
-    description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple stats about them",
+    description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple stats about them\
+    I built this for fun to learn about computer vision and webscraping, and also because I wanted to see if I could make something like TCGPlayer's card recognition tool.",
     tags: ["computer vision", "webscraping", "python", "opencv"],
     url: "",
     repo: "https://github.com/Paucv27/polidex_tcg",

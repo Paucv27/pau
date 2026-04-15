@@ -39,4 +39,5 @@ html, body {
   --post-bg: #3a5a4063;
   --about-bg: #3a5a4063;
   --language-color: #2c4531;
+  --panel-grabber: 2px solid rgba(159, 201, 167, 0.639);
 }

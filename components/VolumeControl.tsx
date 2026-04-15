@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
+import { useAudio } from "@/contexts/AudioContext";
 
 export default function VolumeControl() {
   const [open, setOpen] = useState(false);
-  const [volume, setVolume] = useState(50);
-  const [muted, setMuted] = useState(false);
-
+  const { volume, muted, setVolume, setMuted, playSound } = useAudio();
+  
   const getComment = () => {
     if (muted) return "silent treatment";
     if (volume <= 5) return "honestly just mute me";
@@ -15,27 +15,36 @@ export default function VolumeControl() {
     if (volume == 30) return "but so do I sometimes so I cant judge";
     if (volume <= 45) return "ok i guess";
     if (volume <= 49) return "atp just make it 50 so its a nice number";
-    if (volume == 50) return "thank you";
+    if (volume == 50) return "honestly you could leave it here";
     if (volume <= 64) return "this is just a weird range to be in ngl";
     if (volume == 67) return "please don't";
     if (volume == 69) return "...";
-    if (volume <= 75) return "optimal volume imo";
-    if (volume <= 90) return "this isn't too bad is it";
+    if (volume <= 75) return "getting a bit loud here";
+    if (volume <= 90) return "idkkkk";
     if (volume == 100) return "maybe go get checked for hearing damage";
     return "professional upstairs neighbour";
+  };
+
+  const withClickSound = (callback: () => void) => {
+  return () => {
+    playSound("click");
+    callback();
+  };
   };
 
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={withClickSound(() => setOpen(o => !o))}
+        onMouseEnter={() => playSound("hover")}
         className="w-16 h-16 rounded-lg flex items-center justify-center
           border border-neutral-200 dark:border-neutral-700
           bg-white dark:bg-neutral-900
-          text-neutral-800 dark:text-neutral-100
+          text-neutral-800 dark:text-neutral-300
           hover:border-neutral-400 dark:hover:border-neutral-500
           transition-colors duration-200 font-mono text-2xl"
         title="Volume control"
+        style={{ cursor: "pointer" }}
       >
         {muted || volume === 0 
         ? <VolumeX size={35} /> 
@@ -68,13 +77,13 @@ export default function VolumeControl() {
               {muted ? "off" : "on"}
             </span>
             <button
-              onClick={() => setMuted(m => !m)}
+              onClick={withClickSound(() => setMuted(!muted))}
               className="w-8 h-4 rounded-full transition-colors duration-200 relative"
               style={{ background: muted ? "#d1d5db" : "var(--accent)" }}
             >
               <span
                 className="absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all duration-200"
-                style={{ left: muted ? "2px" : "calc(100% - 14px)" }}
+                style={{ left: muted ? "2px" : "calc(100% - 14px)", cursor: "pointer" }}
               />
             </button>
           </div>
@@ -86,7 +95,9 @@ export default function VolumeControl() {
                      opacity: muted ? 0.4 : 1, 
                      transition: "opacity 0.2s", 
                      padding: "5px",
-                     scrollbarColor: "var(--accent) transparent",}}
+                     scrollbarColor: "var(--accent) transparent",
+                     cursor: "pointer" }}
+            onMouseDown={() => playSound("pop")}
           >
             {Array.from({ length: 100 }, (_, i) => i + 1).map(v => (
               <label
@@ -98,7 +109,10 @@ export default function VolumeControl() {
                   name="volume"
                   disabled={muted}
                   checked={volume === v}
-                  onChange={() => setVolume(v)}
+                  onChange={() => {
+                    playSound("click");
+                    setVolume(v);
+                  }}
                   className="cursor-pointer"
                   style={{ accentColor: "var(--accent)" }}
                 />

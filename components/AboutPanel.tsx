@@ -2,12 +2,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useAudio } from "@/contexts/AudioContext";
 
 const SECTION = "text-[28px] font-mono font-bold uppercase tracking-widest text-neutral-100 dark:text-neutral-200 mb-3";
-const SEPARATOR = "border-t border-neutral-200 dark:border-neutral-700 my-5";
 
 export default function AboutPanel() {
   const [expanded, setExpanded] = useState(false);
+  const { playSound } = useAudio();
 
   return (
     <motion.div
@@ -32,8 +33,20 @@ export default function AboutPanel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex items-center justify-center h-full px-6 gap-3 select-none"
-            style={{ border: "var(--panel-grabber)", borderRadius: "15px" }}
+            className="flex items-center justify-center h-full px-6 gap-3 select-none transition-all duration-200"
+            style={{ border: "var(--panel-grabber)", borderRadius: "15px", cursor: "pointer" }}
+            onClick={() => {
+              playSound("item");
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.boxShadow = "0 0 15px var(--accent)";
+              e.currentTarget.style.borderColor = "var(--accent)";
+              playSound("hover")
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.border = "var(--panel-grabber)";
+            }}
           >
             <div className="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-700 shrink-0" />
             <span className="font-mono text-md text-neutral-600 dark:text-neutral-300">
@@ -55,11 +68,19 @@ export default function AboutPanel() {
             {/* Close button */}
             <div className="flex justify-end shrink-0" style={{ padding: "10px" }}>
               <button
-                onClick={(e) => { e.stopPropagation(); setExpanded(false); }}
+                onClick={() => {
+                  setExpanded(false);
+                  playSound("click");
+                }}
                 className="font-mono text-md transition-colors"
-                style={{ color: "var(--accent)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--accent-hover)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--accent)")}
+                style={{ color: "var(--accent)" , cursor: "pointer" }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = "var(--accent-hover)";
+                  playSound("hover");
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = "var(--accent)";
+                }}
               >
                 [close]
               </button>
@@ -126,7 +147,11 @@ export default function AboutPanel() {
                         style={{ background: "var(--accent-soft)", 
                                  color: "var(--language-color)", 
                                  padding: "10px" }}
-                        onMouseEnter={e => (e.currentTarget.style.background = "var(--accent-hover)", e.currentTarget.style.color = "white")}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.background = "var(--accent-soft-transparent)" 
+                          e.currentTarget.style.color = "white"
+                          playSound("hover");
+                        }}
                         onMouseLeave={e => (e.currentTarget.style.background = "var(--accent-soft)", e.currentTarget.style.color = "var(--language-color)")}
                       >
                         {lang}
@@ -173,10 +198,16 @@ export default function AboutPanel() {
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={e => e.stopPropagation()}
+                        onClick={e => {
+                          e.stopPropagation();
+                          playSound("pop");
+                        }}
                         className="text-md font-mono transition-colors"
                         style={{ color: "var(--accent-soft)", paddingTop: "5px" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.color = "white";
+                          playSound("hover");
+                        }}
                         onMouseLeave={e => (e.currentTarget.style.color = "var(--accent-soft)")}
                       >
                         {icon}

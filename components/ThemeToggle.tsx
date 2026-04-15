@@ -2,10 +2,12 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react"
+import { useAudio } from "@/contexts/AudioContext";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { playSound } = useAudio();
 
   // Avoid hydration mismatch — only render after client mounts
   useEffect(() => setMounted(true), []);
@@ -13,9 +15,15 @@ export default function ThemeToggle() {
 
   const isDark = theme === "dark";
 
+  const handleClick = () => {
+    playSound("triangle");
+    setTheme(isDark ? "light" : "dark");
+  }
+
   return (
     <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={handleClick}
+      onMouseEnter={() => playSound("hover")}
       className="w-16 h-16 rounded-lg flex items-center justify-center
         border border-neutral-200 dark:border-neutral-700
         bg-white dark:bg-neutral-900
@@ -23,6 +31,7 @@ export default function ThemeToggle() {
         hover:border-neutral-400 dark:hover:border-neutral-500
         transition-colors duration-200 font-mono text-2xl"
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      style={{ cursor: "pointer" }}
     >
       {isDark
       ? <Moon size={35} style={{ color: "var(--accent-soft)" }} />

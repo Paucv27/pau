@@ -51,7 +51,7 @@ export default function ParticlesBackground() {
             resize: true,
           },
           modes: {
-            repulse: { distance: 150, duration: 1 },
+            repulse: { distance: 200, duration: 1 },
             grab: { distance: 120, links: { opacity: 0.7 } },
           },
         },
