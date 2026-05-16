@@ -125,7 +125,7 @@ export default function AboutPanel() {
                       borderLeft: "2px solid white" 
                       }}>
                   <p className="text-neutral-100 text-md leading-relaxed font-mono font-family-sans">
-                      // hi! i'm pau, a 20 y/o cs student from Tenerife currently in studying in Manchester
+                      // hi! i'm pau, a 20 y/o cs student from Tenerife currently studying in Manchester
                       <br />
                       // i'm not actually a web dev, but i needed a project to learn some useful frontend skills. i'm more into backend and cybersecurity, but i'll treat this website like my baby
                       <br />
