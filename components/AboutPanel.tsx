@@ -93,6 +93,9 @@
 
               {/* Header */}
               <div className="px-7 shrink-0">
+                <div style={{ display: "none" }}> {/* preloading the image */}
+                  <Image src="/images/profile.jpeg" alt="" width={280} height={280} priority />
+                </div>
                 <div className="flex items-center gap-5 mb-6" 
                       style={{ paddingTop: "40px", 
                               paddingBottom: "40px", 
@@ -119,6 +122,7 @@
                       alt="Pau Carrillo Velasco"
                       width={280}
                       height={280}
+                      priority
                       className="w-35 h-35 rounded-full shrink-0 object-cover object-left"
                     />
                   </motion.div>
