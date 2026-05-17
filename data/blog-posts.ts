@@ -9,6 +9,18 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   // TEMPLATE — copy this block to add a new post:
   {
+    id: "post-5",
+    title: "Exam Season",
+    date: "2026-05-17",     
+    tags: ["uni"],
+    content: "Exam season starts tomorrow, and I don't really feel that stressed about it?\
+     Its weird, considering how many things I have going on right now, but I think its because I know that I can only do so much, and stressing about it won't help.\
+     Like I recently got rejected from a really cool internship, and I've had to choose a third year project, and I've had to sort out my accommodation for next year, etcetc ᶻ 𝗓 𐰁\
+     I'm also quite lost about what I want to do after uni, and I feel like I should be doing more to figure that out, or somehow becoming a coding genious like some others at my uni.\
+     But at the end of the day, all I can do is keep trying my best and know that I shouldn't compare myself to others because I have my own unique path ಄\
+     Good luck to everyone else doing exams :p"
+  },
+  {
     id: "post-4",
     title: "EL BAIFO",
     date: "2026-04-26",     

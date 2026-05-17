@@ -28,10 +28,10 @@ export default function LoadingScreen() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="text-white font-mono text-xl"
+        className="text-white font-mono tex t-xl"
         style={{ color: "var(--accent)" }}
       >
-        loading pau's site...
+        Welcome to Pau's website!
       </motion.div>
     </motion.div>
   );

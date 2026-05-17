@@ -26,4 +26,15 @@ export const projects: Project[] = [
     url: "https://paucv27.vercel.app/",
     repo: "https://github.com/Paucv27/pau",
   },
+  {
+    id: "proj-3",
+    title: "ASCII-fy",
+    description: "A simple CLI tool to convert images into ASCII art. Just wanted a mini-project on a random day and I like ASCII art, that's it really.\
+    More than anything I tried to write clean, reusable code >> \
+    One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.\
+    I think eventually I'll add more customisation, and possibly make it a web app or a decent importable module.",
+    tags: ["python"],
+    url: "",
+    repo: "https://github.com/Paucv27/ASCII-fy",
+  },
 ];

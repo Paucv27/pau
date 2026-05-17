@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { useAudio } from "@/contexts/AudioContext";
+import ScrambleText from "./ScrambleText";
 
 const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
 
@@ -63,7 +64,10 @@ export default function ProjectsPanel() {
         <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" 
               style={{ padding: "10px", 
                        borderBottom: "2px solid lightgrey"}}>
-          <p className="text-neutral-900 dark:text-white font-semibold text-lg">Projects</p>
+          <ScrambleText
+            text="Projects"
+            className="text-neutral-900 dark:text-white font-semibold text-lg"
+          ></ScrambleText>
           <p className="text-neutral-400 dark:text-neutral-500 text-sm font-mono mt-0.5">
             things I've built
           </p>
@@ -148,9 +152,11 @@ export default function ProjectsPanel() {
               onMouseEnter={() => playSound("hover")}
             >
               <div className="flex items-start justify-between gap-2">
-                <p className="text-neutral-900 dark:text-white text-md font-medium" style={{ paddingLeft: "10px", paddingTop: "10px"}}>
-                  {project.title}
-                </p>
+                <ScrambleText
+                  text={project.title}
+                  className="text-neutral-900 dark:text-white text-md font-medium"
+                  style={{ paddingLeft: "10px", paddingTop: "10px"}}
+                ></ScrambleText>
                 <div className="flex gap-3 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" style={{ paddingRight: "10px", paddingTop: "10px"}}>
                   {project.repo && (
                     <a

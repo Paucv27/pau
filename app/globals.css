@@ -27,8 +27,8 @@ html, body {
   --tag: #000000;
   --post-bg: #aecda06a;
   --scrollbar: #81a372cc;
-  --about-bg: #aecda0;
-  --language-color: #aecda0;
+  --about-bg: #658e52e7;
+  --language-colour: #aecda0;
 }
 
 .dark {
@@ -38,6 +38,6 @@ html, body {
   --tag: #ffffff;
   --post-bg: #3a5a4063;
   --about-bg: #3a5a4063;
-  --language-color: #2c4531;
+  --language-colour: #2c4431;
   --panel-grabber: 2px solid rgba(159, 201, 167, 0.639);
 }

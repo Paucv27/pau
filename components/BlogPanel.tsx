@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blog-posts";
 import { useAudio } from "@/contexts/AudioContext";
+import ScrambleText from "./ScrambleText";
 
 const allTags = Array.from(new Set(blogPosts.flatMap(p => p.tags)));
 
@@ -25,12 +26,16 @@ export default function BlogPanel() {
       {/* Panel body */}
       <div className="w-130 h-[650px] flex flex-col
         bg-white dark:bg-neutral-900
+        border border-neutral-200 dark:border-neutral-800
         border-l-0 rounded-r-2xl overflow-hidden"
         style={{ }}>
 
         <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-800" 
               style={{ padding: "10px", borderBottom: "2px solid lightgrey"}}>
-          <p className="text-neutral-900 dark:text-white font-semibold text-lg">Blog</p>
+          <ScrambleText
+            text="Blog"
+            className="text-neutral-900 dark:text-white font-semibold text-lg"
+          ></ScrambleText>
           <p className="text-neutral-500 dark:text-neutral-500 text-sm font-mono mt-0.5">
             what I've been up to
           </p>
@@ -113,10 +118,12 @@ export default function BlogPanel() {
               style={{ background: "var(--post-bg)" }}
               onMouseEnter={() => playSound("hover")}
             >
-              <p className="text-neutral-900 dark:text-white text-md font-medium" 
-                 style={{ paddingLeft: "10px", paddingTop: "10px", paddingRight: "10px"}}>
-                {post.title}
-              </p>
+              <div style={{ paddingLeft: "10px", paddingTop: "10px" }}>
+                <ScrambleText
+                  text={post.title}
+                  className="text-neutral-900 dark:text-white text-md font-medium"
+                />
+              </div>
               <p className="text-neutral-400 dark:text-neutral-500 text-xs font-mono mt-0.5" 
                  style={{ paddingLeft: "10px"}}>
                 {post.date}
