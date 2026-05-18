@@ -19,7 +19,7 @@
         onClick={() => !expanded && setExpanded(true)}
         className={`
           relative bg-white dark:bg-neutral-900
-          border border-neutral-200 dark:border-neutral-800
+          border border-neutral-300 dark:border-neutral-800
           rounded-2xl overflow-hidden flex flex-col z-10
           ${expanded ? "cursor-default" : "cursor-pointer hover:border-neutral-400 dark:hover:border-neutral-600"}
           transition-colors duration-200
@@ -101,7 +101,7 @@
                               paddingBottom: "40px", 
                               paddingLeft: "20px", 
                               paddingRight: "20px", 
-                              borderTop: "2px solid lightgrey"}}>
+                              borderTop: "2px solid var(--accent)"}}>
                   <motion.div
                     whileTap={{ scale: 0.9 }}
                     className="rounded-full shrink-0 cursor-help"
@@ -132,7 +132,7 @@
                       className="font-semibold text-4xl leading-tight"
                       style={{ color: "var(--accent-soft)"}}
                     ></ScrambleText>
-                    <p className="text-neutral-400 dark:text-neutral-500 text-sm font-mono mt-1">
+                    <p className="text-neutral-500 dark:text-neutral-500 text-sm font-mono mt-1">
                       CS Student @ University of Manchester, UK
                     </p>    
                   </div>
@@ -182,9 +182,9 @@
                       {["English", "Español"].map(lang => (
                         <span
                           key={lang}
-                          className="text-xl px-3 py-1.5 rounded-md font-mono"
+                          className="text-xl px-3 py-1.5 rounded-lg font-mono"
                           style={{ background: "var(--accent)", 
-                                  color: "var(--language-colour)", 
+                                  color: "var(--accent-soft)", 
                                   padding: "10px"}}
                           onMouseEnter={e => {
                             e.currentTarget.style.background = "white" 
@@ -193,7 +193,7 @@
                           }}
                           onMouseLeave={e => (
                             e.currentTarget.style.background = "var(--accent)", 
-                            e.currentTarget.style.color = "var(--language-colour)")}
+                            e.currentTarget.style.color = "var(--accent-soft)")}
                         >
                           {lang}
                         </span>
@@ -230,15 +230,15 @@
                       </div>
 
                       {/* University */}
-                      <p className="font-mono text-sm mt-1" style={{ color: "var(--accent-soft)" }}>
-                        University of Manchester
+                      <p className="font-mono text-sm text-neutral-300 mt-1">
+                        The University of Manchester, UK
                       </p>
 
                       {/* Divider */}
                       <div style={{ borderTop: "1px solid var(--accent-soft-transparent)", margin: "10px 0" }} />
 
                       {/* Roles */}
-                      <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest mb-2">
+                      <p className="font-mono text-xs text-neutral-100 uppercase tracking-widest mb-2">
                         Roles
                       </p>
                       <div className="flex flex-col gap-1.5">
@@ -248,7 +248,7 @@
                           "Catalan Society — Secretary",
                         ].map(role => (
                           <div key={role} className="flex items-center gap-2">
-                            <span style={{ color: "var(--accent-soft)", fontSize: "12px" }}>⟢</span>
+                            <span style={{ color: "var(--accent)", fontSize: "14px" }}>⟢</span>
                             <span className="font-mono text-md text-neutral-100"
                                   style={{
                                     paddingTop: "3px",
@@ -333,14 +333,15 @@
                             e.currentTarget.style.background = "var(--accent-soft-transparent)";
                           }}
                         >
-                          <span style={{ fontSize: "22px", lineHeight: 1.3, flexShrink: 0 }}>{emoji}</span>
+                          <span style={{ color: "var(--accent)", fontSize: "26px", lineHeight: 0.8, flexShrink: 0 }}>{emoji}</span>
                           <span className="font-mono text-md text-neutral-100 leading-relaxed">{fact}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   <a href="https://emojicombos.com/" target="_blank" rel="noopener noreferrer">
-                    <p className="text-center text-neutral-500 text-xs font-mono mt-4"
+                    <p className="text-center text-neutral-100 text-xs font-mono mt-4 opacity-60 hover:opacity-100 transition-opacity duration-200"
+                       style={{ paddingBottom: "5px" }}
                        onMouseEnter={e => {
                         playSound("hover");
                       }}

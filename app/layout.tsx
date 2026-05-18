@@ -7,8 +7,8 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
-  title: "pau's site",
-  description: "pau's personal website!",
+  title: "Pau Carrillo Velasco",
+  description: "pau's personal website! - CS student at The University of Manchester",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

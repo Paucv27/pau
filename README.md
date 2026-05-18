@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My portfolio website!
 
-## Getting Started
+Built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Things I used to make it
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Technology | Purpose |
+|------------|---------|
+| TypeScript | Learning Type-safe JavaScript |
+| React | UI library |
+| Next.js | React framework |
+| Tailwind CSS | Styling |
+| Framer Motion | Animations |
+| Howler.js | Sound effects |
+| tsparticles | Interactive particle background |
+| Node.js | JavaScript runtime |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Interactive particle background if you're bored
+- Expandable/collapsible panels (About, Projects, Blog)
+- Fun sound effects with global volume control
+- Dark/Light mode toggle (dark mode preferred)
+- Blog post filtering by tags
+- Project showcase with external links to repo and demo (if it has one)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's next?
+During the coming months (it's exam season rn) I am looking to add a little minigame that visitors will be able to play and in doing so, leave their mark on my website!
 
-## Learn More
+Also I will probably change the whole website at some point maybe during summer, I feel like now it looks very "generic cs portfolio website" even though one of my best friends says it's "different" because it feels "polished", not sure how much I believe his words...
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please don't hesitate to provide any feedback through my email or LinkedIn! which of course you can find linked on my website ;)
