@@ -35,18 +35,18 @@ export default function Home() {
       onClick={handleBackgroundClick}
       >
 
-      <div className="absolute top-4 left-4 flex gap-2 z-50">
+      <div className="absolute top-4 left-4 flex gap-2 z-10">
         <ThemeToggle />
         <VolumeControl />
       </div>
 
-      <div className="absolute top-4 left-0 right-0 text-center z-30">
+      <div className="absolute top-4 left-0 right-0 text-center z-10">
         <p className="font-mono text-xs text-neutral-100 dark:text-neutral-500 opacity-40 hover:opacity-100 transition-opacity duration-200">
           dark mode looks better imo
         </p>
       </div>
 
-      <div className="absolute bottom-4 left-0 right-0 text-center z-30">
+      <div className="absolute bottom-4 left-0 right-0 text-center z-10">
         <p className="font-mono text-xs text-neutral-100 dark:text-neutral-500 opacity-40 hover:opacity-100 transition-opacity duration-200">
           mobile screen compatible version coming soon!
         </p>

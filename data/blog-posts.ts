@@ -11,7 +11,7 @@ export const blogPosts: BlogPost[] = [
     id: "post-6",
     title: "Tenerife!",
     date: "2026-07-26",     
-    tags: [""],
+    tags: ["travel", "update", "home", "friends"],
     content: "So recently I went back home to Tenerife for a few weeks, and it was really nice to finally be back for a decent amount of time :)\
      I got to see my family and friends, enjoy the weather, and disconnect from the busy tech world for a bit (kinda)\
      Some friends of mine from uni also came with me for a couple of days, and it was great being able to show them around and share my culture with them !\
