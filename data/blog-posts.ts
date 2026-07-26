@@ -7,7 +7,18 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  // TEMPLATE — copy this block to add a new post:
+  {
+    id: "post-6",
+    title: "Tenerife!",
+    date: "2026-07-26",     
+    tags: [""],
+    content: "So recently I went back home to Tenerife for a few weeks, and it was really nice to finally be back for a decent amount of time :)\
+     I got to see my family and friends, enjoy the weather, and disconnect from the busy tech world for a bit (kinda)\
+     Some friends of mine from uni also came with me for a couple of days, and it was great being able to show them around and share my culture with them !\
+     I wish we had more time, and a car ✇ definitely taking notes for next time, but it was still really really fun 𖤐\
+     I told myself I would fully disconnect, but I ended up doing some AWS IAM and EC2 stuff, and make some changes to my learning plan for the next few months.\
+     Anyway, overall i had a really great time, but its time to get back on the grind ♪"
+  },
   {
     id: "post-5",
     title: "Exam Season",

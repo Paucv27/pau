@@ -30,11 +30,31 @@ export const projects: Project[] = [
     id: "proj-3",
     title: "ASCII-fy",
     description: "A simple CLI tool to convert images into ASCII art. Just wanted a mini-project on a random day and I like ASCII art, that's it really.\
-    More than anything I tried to write clean, reusable code >> \
+    More than anything I tried to write clean, reusable code, even if the actual thing is so simple a child could do it >> \
     One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.\
     I think eventually I'll add more customisation, and possibly make it a web app or a decent importable module.",
     tags: ["python"],
     url: "",
     repo: "https://github.com/Paucv27/ASCII-fy",
+  },
+  {
+    id: "proj-4",
+    title: "RibbiTraffic",
+    description: "Simple network traffic visualiser that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
+    I wanted to learn more about networking and what packets are flowing through my local network, so I followed a simple tutorial to build the foundation and I've been expanding the functionality during my free time [...] \
+    I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing, like a real dashboard with live updates and alerts !!",
+    tags: ["python", "networking", "scapy"],
+    url: "",
+    repo: "https://github.com/Paucv27/ribbitraffic",
+  },
+  {
+    id: "proj-5",
+    title: "GreenInv",
+    description: "Personal inventory with a focus on sustainability. I wanted to combine Vinted with a personal inventory list to help people be more conscious about their consumption and waste, and to make it easier for them to find ways to give their old stuff a second life ! \
+    Right now its just a wardrobe, but even just that has some really cool features, go check it out :p \
+    Cool concept I made using Lovable, but it would have to be developed in a more serious way to be useful, and I don't have the time or resources to do that right now. Maybe one day I'll come back to it, but for now it's just a fun little project @",
+    tags: ["lovable", "sustainability"],
+    url: "https://greeninv.lovable.app",
+    repo: "https://github.com/Paucv27/greeninv",
   },
 ];
