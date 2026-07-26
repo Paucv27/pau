@@ -57,4 +57,12 @@ export const projects: Project[] = [
     url: "https://greeninv.lovable.app",
     repo: "https://github.com/Paucv27/greeninv",
   },
+  {
+    id: "proj-6",
+    title: "Doc Librarby",
+    description: "Not a project, but a library for project documentation ♠ I thought it would be easier to display these non-code projects in a single place, so I made GitHub repo as a library of sorts.",
+    tags: ["AWS", "cybersecurity", "cloud"],
+    url: "",
+    repo: "https://github.com/Paucv27/Doc-Librarby",
+  },
 ];
