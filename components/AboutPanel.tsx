@@ -159,8 +159,8 @@
                     <div className="flex flex-col gap-3">
                       {[
                         "// hi! i'm pau, a 20 y/o cs student from Tenerife currently studying in Manchester",
-                        "// i'm not actually a web dev, but i needed a project to learn some useful frontend skills. i'm more into backend and cybersecurity, but i'll treat this website like my baby",
-                        "// feel free to check out my projects and blog posts, or contact me for whatever reason",
+                        "// i'm not actually a web dev, but i needed a project to learn some useful frontend skills and have a space to share my projects and my journey :p",
+                        "// recently i've been learning about cybersecurity, distributed systems, and space systems in my free time to prepare for my third year and my career after graduating in 2027.",
                         "// outside of tech i'm mainly interested in music and games, and i'm also really big on Pokemon, Star Wars, and the colour green if you couldn't already tell :)",
                       ].map(line => (
                         <p key={line} className="text-neutral-100 text-md leading-relaxed font-mono">
@@ -243,9 +243,13 @@
                       </p>
                       <div className="flex flex-col gap-1.5">
                         {[
-                          "UniCS — Secretary & PR Officer",
-                          "Manchester Intelligence Society — Treasurer",
-                          "Catalan Society — Secretary",
+                          "--------------------- 26/27 -----------------------",
+                          "Manchester Intelligence Society | Secretary",
+                          "Catalan Society | Social Secretary",
+                          "--------------------- 25/26 -----------------------",
+                          "UniCS | Secretary & PR Officer",
+                          "Manchester Intelligence Society | Treasurer",
+                          "Catalan Society | Secretary",
                         ].map(role => (
                           <div key={role} className="flex items-center gap-2">
                             <span style={{ color: "var(--accent)", fontSize: "14px" }}>⟢</span>
@@ -274,7 +278,7 @@
                       {[
                         { href: "https://github.com/paucv27", icon: <FaGithub size={60} /> },
                         { href: "https://linkedin.com/in/paucv27", icon: <FaLinkedin size={60} /> },
-                        { href: "https://instagram.com/pauvelxsco", icon: <FaInstagram size={60} /> },
+                        //{ href: "https://instagram.com/pauvelxsco", icon: <FaInstagram size={60} /> },
                       ].map(({ href, icon }) => (
                         <a
                           key={href}
@@ -311,10 +315,10 @@
                     <p className={SECTION}>More about me</p>
                     <div className="flex flex-col gap-2" style={{ marginTop: "8px" }}>
                       {[
-                        { emoji: "☕︎", fact: "i was born in february 2006 !" },
-                        { emoji: "♫", fact: "i love going to concerts ♪༘⋆ last year i saw 2 of my top 3 artists of all time, and this year i'm seeing the third one!" },
+                        { emoji: "☕︎", fact: "i'm half spanish half venezuelan !" },
+                        { emoji: "♫", fact: "i love going to concerts ♪༘⋆ last year i saw 2 of my top 3 artists of all time, and this year i saw the third one!" },
                         { emoji: "✈︎", fact: "i've lived in 5 countries across 3 continents (4 if you believe america is north/south)" },
-                        { emoji: "⚽︎", fact: "i support fc barcelona, but have sadly never been to a game irl :(" },
+                        { emoji: "⚽︎", fact: "i support fc barcelona, but have sadly never been to a game irl" },
                         { emoji: "𑄝", fact: "i want a fat orange cat named biscoff as soon as i can" },
                         { emoji: "♘", fact: "i also like playing chess (recently got back into it) and drawing (occasionally)!" },
                       ].map(({ emoji, fact }) => (

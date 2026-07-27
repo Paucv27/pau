@@ -11,7 +11,7 @@ export const projects: Project[] = [
   // TEMPLATE
   {
     id: "proj-1",
-    title: "Polidex TCG",
+    title: "Polidex",
     description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple stats about them\
     I built this for fun to learn about computer vision and webscraping, and also because I wanted to see if I could make something like TCGPlayer's card recognition tool.",
     tags: ["computer vision", "webscraping", "python", "opencv"],
@@ -27,17 +27,6 @@ export const projects: Project[] = [
     repo: "https://github.com/Paucv27/pau",
   },
   {
-    id: "proj-3",
-    title: "ASCII-fy",
-    description: "A simple CLI tool to convert images into ASCII art. Just wanted a mini-project on a random day and I like ASCII art, that's it really.\
-    More than anything I tried to write clean, reusable code, even if the actual thing is so simple a child could do it >> \
-    One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.\
-    I think eventually I'll add more customisation, and possibly make it a web app or a decent importable module.",
-    tags: ["python"],
-    url: "",
-    repo: "https://github.com/Paucv27/ASCII-fy",
-  },
-  {
     id: "proj-4",
     title: "RibbiTraffic",
     description: "Simple network traffic visualiser that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
@@ -48,21 +37,32 @@ export const projects: Project[] = [
     repo: "https://github.com/Paucv27/ribbitraffic",
   },
   {
-    id: "proj-5",
-    title: "GreenInv",
-    description: "Personal inventory with a focus on sustainability. I wanted to combine Vinted with a personal inventory list to help people be more conscious about their consumption and waste, and to make it easier for them to find ways to give their old stuff a second life ! \
-    Right now its just a wardrobe, but even just that has some really cool features, go check it out :p \
-    Cool concept I made using Lovable, but it would have to be developed in a more serious way to be useful, and I don't have the time or resources to do that right now. Maybe one day I'll come back to it, but for now it's just a fun little project @",
-    tags: ["lovable", "sustainability"],
-    url: "https://greeninv.lovable.app",
-    repo: "https://github.com/Paucv27/greeninv",
-  },
-  {
     id: "proj-6",
     title: "Doc Librarby",
     description: "Not a project, but a library for project documentation ♠ I thought it would be easier to display these non-code projects in a single place, so I made GitHub repo as a library of sorts.",
     tags: ["AWS", "cybersecurity", "cloud"],
     url: "",
     repo: "https://github.com/Paucv27/doc_librarby",
+  },
+  {
+    id: "proj-5",
+    title: "GreenInv",
+    description: "Personal inventory with a focus on sustainability. I wanted to combine Vinted with a personal inventory list to help people be more conscious about their consumption and waste, and to make it easier for them to find ways to give their old stuff a second life ! \
+    Right now its just a wardrobe, but even just that has some really cool features, go check it out :p \
+    Cool concept I made using Lovable, but it would have to be developed in a more serious way to be useful, and I don't have the time or resources to do that right now. Maybe one day I'll come back to it, but for now it's just a fun little project @",
+    tags: ["lovable", "sustainability", "typescript"],
+    url: "https://greeninv.lovable.app",
+    repo: "https://github.com/Paucv27/greeninv",
+  },
+  {
+    id: "proj-3",
+    title: "ASCII-fy",
+    description: "A simple CLI tool to convert images into ASCII art. Just wanted a mini-project on a random day and I like ASCII art, that's it really.\
+    More than anything I tried to write clean, reusable code, even if the actual thing is so simple a child could do it >> \
+    One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.\
+    I think eventually I'll add more customisation, and possibly make it a web app or a decent importable module.",
+    tags: ["python"],
+    url: "",
+    repo: "https://github.com/Paucv27/ASCII-fy",
   },
 ];
