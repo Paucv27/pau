@@ -186,7 +186,10 @@ export default function ProjectsPanel() {
                   )}
                 </div>
               </div>
-              <p className="font-mono text-neutral-600 dark:text-neutral-200 text-sm mt-1.5 leading-relaxed" style={{ paddingLeft: "10px", paddingTop: "5px"}}>
+              <p className="font-mono text-neutral-600 dark:text-neutral-200 text-sm mt-1.5 leading-relaxed" 
+                 style={{ paddingLeft: "10px", 
+                          paddingRight: "10px", 
+                          paddingTop: "5px"}}>
                 {project.description}
               </p>
               <div className="flex gap-1.5 mt-3 flex-wrap" 

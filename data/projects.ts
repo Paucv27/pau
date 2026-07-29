@@ -10,13 +10,14 @@ export type Project = {
 export const projects: Project[] = [
   // TEMPLATE
   {
-    id: "proj-1",
-    title: "Polidex",
-    description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple stats about them\
-    I built this for fun to learn about computer vision and webscraping, and also because I wanted to see if I could make something like TCGPlayer's card recognition tool.",
-    tags: ["computer vision", "webscraping", "python", "opencv"],
+    id: "proj-4",
+    title: "RibbiTraffic",
+    description: "Simple network traffic visualiser that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
+    I wanted to learn more about networking and what packets are flowing through my local network, so I built a simple foundation and I'll been expanding the functionality during my free time [...] \
+    I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing, like a real dashboard with live updates and alerts !!",
+    tags: ["python", "networking", "scapy"],
     url: "",
-    repo: "https://github.com/Paucv27/polidex_tcg",
+    repo: "https://github.com/Paucv27/ribbitraffic",
   },
   {
     id: "proj-2",
@@ -25,16 +26,6 @@ export const projects: Project[] = [
     tags: ["webdev", "next.js", "react", "typescript"],
     url: "https://paucv27.vercel.app/",
     repo: "https://github.com/Paucv27/pau",
-  },
-  {
-    id: "proj-4",
-    title: "RibbiTraffic",
-    description: "Simple network traffic visualiser that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
-    I wanted to learn more about networking and what packets are flowing through my local network, so I followed a simple tutorial to build the foundation and I've been expanding the functionality during my free time [...] \
-    I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing, like a real dashboard with live updates and alerts !!",
-    tags: ["python", "networking", "scapy"],
-    url: "",
-    repo: "https://github.com/Paucv27/ribbitraffic",
   },
   {
     id: "proj-6",
@@ -55,12 +46,21 @@ export const projects: Project[] = [
     repo: "https://github.com/Paucv27/greeninv",
   },
   {
+    id: "proj-1",
+    title: "Polidex",
+    description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple stats about them\
+    I built this for fun to learn about computer vision and webscraping, and also because I wanted to see if I could make something like TCGPlayer's card recognition tool,\
+    but getting sales data from ebay without an API is a pain.",
+    tags: ["computer vision", "webscraping", "python", "opencv"],
+    url: "",
+    repo: "https://github.com/Paucv27/polidex_tcg",
+  },
+  {
     id: "proj-3",
     title: "ASCII-fy",
     description: "A simple CLI tool to convert images into ASCII art. Just wanted a mini-project on a random day and I like ASCII art, that's it really.\
     More than anything I tried to write clean, reusable code, even if the actual thing is so simple a child could do it >> \
-    One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.\
-    I think eventually I'll add more customisation, and possibly make it a web app or a decent importable module.",
+    One day I got feeedback about my Polidex project that made me realise I need to focus more on code quality.",
     tags: ["python"],
     url: "",
     repo: "https://github.com/Paucv27/ASCII-fy",

@@ -1,7 +1,7 @@
   "use client";
   import { useState } from "react";
   import { motion, AnimatePresence } from "framer-motion";
-  import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+  import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
   import { useAudio } from "@/contexts/AudioContext";
   import Image from "next/image";
  import ScrambleText from "@/components/ScrambleText";
@@ -278,6 +278,7 @@
                       {[
                         { href: "https://github.com/paucv27", icon: <FaGithub size={60} /> },
                         { href: "https://linkedin.com/in/paucv27", icon: <FaLinkedin size={60} /> },
+                        { href: "mailto:paucv27@gmail.com", icon: <FaEnvelope size={60} /> },
                         //{ href: "https://instagram.com/pauvelxsco", icon: <FaInstagram size={60} /> },
                       ].map(({ href, icon }) => (
                         <a
@@ -315,7 +316,7 @@
                     <p className={SECTION}>More about me</p>
                     <div className="flex flex-col gap-2" style={{ marginTop: "8px" }}>
                       {[
-                        { emoji: "☕︎", fact: "i'm half spanish half venezuelan !" },
+                        { emoji: "☕︎", fact: "i'm half spanish half venezuelan :p" },
                         { emoji: "♫", fact: "i love going to concerts ♪༘⋆ last year i saw 2 of my top 3 artists of all time, and this year i saw the third one!" },
                         { emoji: "✈︎", fact: "i've lived in 5 countries across 3 continents (4 if you believe america is north/south)" },
                         { emoji: "⚽︎", fact: "i support fc barcelona, but have sadly never been to a game irl" },
