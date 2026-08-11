@@ -8,6 +8,14 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "post-7",
+    title: "Polidex Update",
+    date: "2026-08-10",
+    tags: ["project", "update"],
+    content: "So I recently updated Polidex to include a new feature that allows users to search for cards by name and get the most recent sales data for that card.\
+     This was a fun little project to work on, and I learned a lot about web scraping and computer vision in the process."
+  },
+  {
     id: "post-6",
     title: "Tenerife!",
     date: "2026-07-26",     

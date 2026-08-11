@@ -316,8 +316,8 @@
                     <p className={SECTION}>More about me</p>
                     <div className="flex flex-col gap-2" style={{ marginTop: "8px" }}>
                       {[
-                        { emoji: "☕︎", fact: "i'm half spanish half venezuelan :p" },
-                        { emoji: "♫", fact: "i love going to concerts ♪༘⋆ last year i saw 2 of my top 3 artists of all time, and this year i saw the third one!" },
+                        { emoji: "☕︎", fact: "i'm spanish/venezuelan !" },
+                        { emoji: "♫", fact: "i love going to concerts ♪༘⋆ last year i saw 2 of my top 3 artists of all time, and this year i saw the third one :p" },
                         { emoji: "✈︎", fact: "i've lived in 5 countries across 3 continents (4 if you believe america is north/south)" },
                         { emoji: "⚽︎", fact: "i support fc barcelona, but have sadly never been to a game irl" },
                         { emoji: "𑄝", fact: "i want a fat orange cat named biscoff as soon as i can" },
