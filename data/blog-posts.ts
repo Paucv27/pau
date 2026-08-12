@@ -12,8 +12,10 @@ export const blogPosts: BlogPost[] = [
     title: "Polidex Update",
     date: "2026-08-10",
     tags: ["project", "update"],
-    content: "So I recently updated Polidex to include a new feature that allows users to search for cards by name and get the most recent sales data for that card.\
-     This was a fun little project to work on, and I learned a lot about web scraping and computer vision in the process."
+    content: "I recently got back to my first project, Polidex, and started working on it again after a long break ⌛︎\
+     Its been really fun to dive back into the code and see how much I've learned since then (and how much I still have to learn)\
+     I made a proper fron-end for it using React, tweaked the recognition, fixed the scraping, and refactored the code a bit 𓆈\
+     Overall, it looks a lot better and is more fun to see in action! I might add more features, but for now I'm happy with how it is, and I think its a good time to take a break from it again and focus on other things ✶"
   },
   {
     id: "post-6",
