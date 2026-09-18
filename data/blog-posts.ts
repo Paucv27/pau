@@ -8,10 +8,20 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "post-8",
+    title: "End of Summer '26",
+    date: "2026-09-18",
+    tags: ["update", "project", "uni"],
+    content: "Starting uni soon, and it feels a lot different than the past 2 years - like I actually feel prepared and ready to be busy... Kinda crazy to think I'll be graduating this year ( ꩜ ᯅ ꩜;)\
+     I actually spent the summer working on some personal projects, and I feel like I've learned a lot and made good progress on my skills, both technical and personal.\
+     I also attended some Threat Intelligence and Red Teaming conferences which were really informative and cool to *try* and understand as a beginner ⏻ \
+     All in all I'm excited to see where this last chapter at uni takes me, and I'm really looking forward to what's coming next (dissertation, society stuff, challenges, and hopefully getting A JOB!!)"
+  },
+  {
     id: "post-7",
     title: "Polidex Update",
     date: "2026-08-10",
-    tags: ["project", "update"],
+    tags: ["project", "update", "tech"],
     content: "I recently got back to my first project, Polidex, and started working on it again after a long break ⌛︎\
      Its been really fun to dive back into the code and see how much I've learned since then (and how much I still have to learn)\
      I made a proper fron-end for it using React, tweaked the recognition, fixed the scraping, and refactored the code a bit 𓆈\
@@ -76,7 +86,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "post-1",
-    title: "Hello World",
+    title: "helloworld('Print!')",
     date: "2026-04-14",
     tags: ["update"],
     content: "here I'll share updates about what I'm up to, what I'm learning, and anything else I feel like writing about (music, games, whatever really) :)",

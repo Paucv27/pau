@@ -12,9 +12,10 @@ export const projects: Project[] = [
   {
     id: "proj-1",
     title: "RibbiTraffic",
-    description: "Simple network traffic visualiser that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
+    description: "Network Dashboard that uses Scapy to sniff packets and display info about them in graphs with Streamlit and Plotly <> \
+    Integrated logs with Wazuh for SIEM-like functionality, including threat detection and alerting // \
     I wanted to learn more about networking and what packets are flowing through my local network, so I built a simple foundation and I'll been expanding the functionality during my free time [...] \
-    I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing, like a real dashboard with live updates and alerts !!",
+    I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing.",
     tags: ["python", "networking", "scapy"],
     url: "",
     repo: "https://github.com/Paucv27/ribbitraffic",
