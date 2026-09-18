@@ -16,7 +16,7 @@ export const projects: Project[] = [
     Integrated logs with Wazuh for SIEM-like functionality, including threat detection and alerting // \
     I wanted to learn more about networking and what packets are flowing through my local network, so I built a simple foundation and I'll been expanding the functionality during my free time [...] \
     I plan to add more features like packet filtering, and maybe even a simple intrusion detection system. I also want to make it more interactive and visually appealing.",
-    tags: ["python", "networking", "scapy"],
+    tags: ["python", "networking", "scapy", "wazuh", "streamlit", "plotly"],
     url: "",
     repo: "https://github.com/Paucv27/ribbitraffic",
   },
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     description: "Pokemon TCG Card Recognition app that fetches most recent sales of a specific card and calculates simple price stats about them\
     This was my first real project I built for fun, and also because I wanted to see if I could make something like TCGPlayer's card recognition tool,\
     but getting sales data from ebay without an API is a pain.",
-    tags: ["computer vision", "webscraping", "python", "opencv"],
+    tags: ["computer vision", "webscraping", "python", "opencv", "react"],
     url: "",
     repo: "https://github.com/Paucv27/polidex_tcg",
   },
